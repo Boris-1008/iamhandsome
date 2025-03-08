@@ -5,12 +5,13 @@ int main()
     char a[] = "AABBBCCCCddd";
     
     for (int i = 0; a[i] != '\0'; i++ ) {
-        int current = a[i];
-        int count = 1;
-        
+        int current = a[i];                // 記錄目前的字元
+        int count = 1;                     // 該字元至少出現一次
+
+        // 計算當前字元的連續出現次數
         while (a[i+1] == current) {
-            count++;
-            i++;
+            count++;                       // 累加該字元出現的次數
+            i++;                           // `i` 向前移動，跳過這些重複的字元
         }
         
         printf("%c%d", current, count);
