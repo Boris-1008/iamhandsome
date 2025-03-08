@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    char a[] = "AABBBCCCCddd";
+    
+    for (int i = 0; a[i] != '\0'; i++ ) {
+        int current = a[i];
+        int count = 1;
+        
+        while (a[i+1] == current) {
+            count++;
+            i++;
+        }
+        
+        printf("%c%d", current, count);
+        
+    }
+    
+    printf("\n");
+
+    return 0;
+}
