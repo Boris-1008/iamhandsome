@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    
+    char a[] = "10001111";
+    int value = 0;
+    
+    //二進位字串轉換為十進位數值
+    for (int i = 0; a[i] != '\0'; i++) {
+        value = value * 2 + ( a[i] - '0');  //將前面的值左移所以乘以2
+    }
+    
+    printf("%X", value);                    //以十六進位格式輸出
+    
+    return 0;
+
+}
