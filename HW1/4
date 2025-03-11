@@ -1,24 +1,11 @@
 #include <stdio.h>
-
+#include <string.h>
 int main() {
-    
-    char a[] = "Hello";
-    int length = 0;
-    
-     // 計算字串長度（不包含 '\0'）
-    while ( a[length] != '\0') {
-        length++;
+    char code[64]={0};
+    scanf("%s", code);
+    for (int i = strlen(code)-1; i > -1; i--) {
+            printf("%c", code[i]);
     }
-    
-     // 交換字串的前後字元
-    for (int i = 0; i < length / 2; i++) {    //只能跑到一半 否則會全部換回來
-        char temp = a[i];                     // a[i]都已經給temp了
-        a[i] = a[length - 1 - i];              
-        a[length - 1 - i] = temp;             // temp的值給a[length - 1 - i]
-    }
-    
-    printf("%s", a);
-    
+    printf("\n");
     return 0;
-
 }
