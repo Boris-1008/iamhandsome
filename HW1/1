@@ -1,24 +1,36 @@
 #include <stdio.h>
+#include <string.h>
 
-int main()
-{
-    char a[] = "AABBBCCCCddd";
-    
-    for (int i = 0; a[i] != '\0'; i++ ) {
-        int current = a[i];                // 記錄目前的字元
-        int count = 1;                     // 該字元至少出現一次
 
-        // 計算當前字元的連續出現次數
-        while (a[i+1] == current) {
-            count++;                       // 累加該字元出現的次數
-            i++;                           // `i` 向前移動，跳過這些重複的字元
-        }
-        
-        printf("%c%d", current, count);
-        
+int main() {
+    char code[64]={0};
+    int many[64] = {0};
+    char str[64] = {0};   
+    int num = 0;
+    int count = 1;
+    scanf("%s", code);
+/*
+    for (int i = 0; i < strlen(code); i++) {
+       printf("%c", code[i]);
     }
-    
     printf("\n");
-
-    return 0;
+*/
+    str[num] = code[0];
+    many[num] = 1;
+    //printf("%s\n", code);
+    for (int i = 1; i < strlen(code); i++) {
+        if (code[i] == str[num]) {
+            many[num]++;
+        } 
+        else {
+            num++;
+            str[num] = code[i];
+            many[num] = 1;
+        }
+    }
+    //printf("%s\n", str);
+    for (int i = 0; i < strlen(str); i++) {
+        printf("%c%d", str[i], many[i]);
+    }
+    printf("\n");
 }
