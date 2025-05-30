@@ -4,9 +4,8 @@ using namespace std;
 class TicTacToe {
 private:
     char board[9];
-    char current;
-    // 八種可能的連線組合
-    static const int winCombos[8][3];
+    char current;  // X 或 O
+    static const int winCombos[8][3]; // 八種可能的連線組合
 
 public:
     TicTacToe() : current('X') {
@@ -51,7 +50,7 @@ public:
     bool isDraw() {
         for (int i = 0; i < 9; ++i)
             if (board[i] >= '1' && board[i] <= '9')
-                return false;
+                return false;  //還有空格
         return true;
     }
 
