@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Bin2Decimal {
+    string bin;
+    
+    public:
+    Bin2Decimal(string b) {
+        bin = b;
+    }
+    
+    int to_decimal() {
+        int result = 0;
+        
+        for (int i = 0; i < bin.length(); i++) {
+            result = result * 2;
+            if (bin[i] == '1') {
+                result += 1;
+            }
+        }
+        
+        return result;
+    }
+};
+
+int main() {
+    Bin2Decimal d("1000");
+    cout << d.to_decimal() << endl;
+    cout << Bin2Decimal("1111").to_decimal() << endl;
+    return 0;
+}
